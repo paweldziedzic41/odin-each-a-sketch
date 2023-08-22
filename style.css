@@ -1,0 +1,19 @@
+.container-grid {
+    justify-items: stretch;
+    justify-content: stretch;
+    width: 320px;
+    height: 320px;
+    background-color: white;
+}
+
+.container-grid div {
+    border: solid 1px black;
+
+}
+
+.rainbow-grid-color:disabled{
+    background-color: red;
+}
+
+
+
