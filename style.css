@@ -1,8 +1,10 @@
 body {
     background-color:gainsboro;
+    font-family: fantasy;
 }
 
 .header {
+    font-size: 4vh;
     height: 5vh;
     width: 100%;
     text-align: center;
@@ -40,6 +42,8 @@ body {
     width: 30vh;
     height: 10vh;
     border-radius: 10px;
+    font-size: 2.5vh;
+    font-weight: bold;
 }
 
 .left-column button:hover {
@@ -91,6 +95,11 @@ body {
 
 /* End of grid size range */
 
+.container-parameters p{
+    font-size: 3vh;
+    margin-top: -0.5vh;
+}
+
 #active {
     background-color: black;
     color: white;
@@ -117,6 +126,7 @@ body {
 
 .container-grid div {
     border: solid 1px black;
+    cursor: default ;
 }
 
 
