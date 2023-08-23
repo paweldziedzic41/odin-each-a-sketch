@@ -18,13 +18,14 @@ function printGrids(gridSize){
 
 
     function color(gridDiv){
-        const rainbowButton = document.querySelector(".rainbow-grid-color");
-        const color = document.querySelector(".grid-color");
-        if (rainbowButton.disabled){ 
+        const rainbowBtn = document.querySelector(".rainbow-grid-color");
+        const colorBtn = document.querySelector(".custom-grid-color");
+        if (rainbowBtn.id === "active"){ 
             const rgb = getRgbNumbers();
             gridDiv.style.backgroundColor = "rgb("+rgb[0]+","+rgb[1]+","+rgb[2]+")";
-        }else gridDiv.style.backgroundColor = color.value;
-    }
+        }else if (colorBtn.id === "active") gridDiv.style.backgroundColor = colorBtn.value;
+        else gridDiv.style.backgroundColor = "white";
+    }   
 
     function getRgbNumbers(){
         numbersArray = [0,0,0];
@@ -36,17 +37,35 @@ function printGrids(gridSize){
 }
 
 function extraButtons(container){
-    const rainbowButton = document.querySelector(".rainbow-grid-color");
-    const clearGrid = document.querySelector(".clear-grid");
-    clearGrid.addEventListener("click", () => {
+    const rainbowBtn = document.querySelector(".rainbow-grid-color");
+    const clearGridBtn = document.querySelector(".clear-grid");
+    const customBtn = document.querySelector(".custom-grid-color")
+    const eraserBtn = document.querySelector(".eraser")
+    
+    rainbowBtn.id = "";
+    customBtn.id = "active";
+    eraserBtn.id = "";
+
+    clearGridBtn.addEventListener("click", () => {
         const grids = container.querySelectorAll("div");
         grids.forEach((grid) => {
             grid.style.backgroundColor = "white";
         })
-        rainbowButton.disabled = false;
     }) 
-    rainbowButton.addEventListener("click", () => {
-        rainbowButton.disabled = true;
+    rainbowBtn.addEventListener("click", () => {
+        rainbowBtn.id = "active";
+        customBtn.id = "";
+        eraserBtn.id = "";
+    })
+    customBtn.addEventListener("click", () => {
+        rainbowBtn.id = "";
+        customBtn.id = "active";
+        eraserBtn.id = "";
+    })
+    eraserBtn.addEventListener("click", () => {
+        rainbowBtn.id = "";
+        customBtn.id = "";
+        eraserBtn.id = "active";
     })
     
 }
@@ -65,14 +84,14 @@ function deleteGrids(){
 }
 
 function getGridSize(){
-    const parameters = document.querySelector(".parameters");
+    const parameters = document.querySelector(".container-parameters");
     let gridRange = document.querySelector(".grid-size");
     let gridRangeValue = document.createElement("p");
-    gridRangeValue.textContent = gridRange.value;
+    gridRangeValue.textContent = gridRange.value + " x " + gridRange.value;
     parameters.appendChild(gridRangeValue);
 
       gridRange.addEventListener("mousemove", () => {
-        gridRangeValue.textContent = gridRange.value;
+        gridRangeValue.textContent = gridRange.value + " x " + gridRange.value;
         parameters.appendChild(gridRangeValue);
       });
       gridRange.addEventListener("mouseup", () => {
