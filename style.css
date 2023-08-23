@@ -1,19 +1,125 @@
+body {
+    background-color:gainsboro;
+}
+
+.header {
+    height: 5vh;
+    width: 100%;
+    text-align: center;
+}
+
+.game {
+    display: flex;
+    height: 90vh;
+}
+
+/* Left side conetent */
+
+.left-column {
+    display: flex;
+    width: 40%;
+    height:90vh;
+    align-items: center;
+    justify-content: right;
+    text-align: center;
+}
+
+.left-column div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3vh;
+    margin-right: 2vh;
+}
+
+/* other buttons */
+
+.left-column div button {
+    margin: 1vh;
+    width: 30vh;
+    height: 10vh;
+    border-radius: 10px;
+}
+
+.left-column button:hover {
+    background-color: black;
+    color: white;
+}
+
+/* End of other buttons */
+
+/* custom color button */
+
+.custom-grid-color {
+    border-radius: 50%;
+    width: 25vh;
+    height: 25vh;
+    margin: 1vh;
+}
+
+.custom-grid-color::-webkit-color-swatch {
+    border-radius: 50%;
+    margin: 1vh;
+}
+
+/* End of custom color button */
+
+/* grid size range */
+
+.grid-size {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    margin: 2vh;
+}
+
+.grid-size::-webkit-slider-thumb{
+    -webkit-appearance: none; /* Override default look */
+   appearance: none;
+   background-color: white;
+   border-radius: 50%;
+   height: 1em;
+   width: 1em;
+}
+
+.grid-size::-webkit-slider-runnable-track{
+    background: black;
+    border-radius: 1em;
+}
+
+
+/* End of grid size range */
+
+#active {
+    background-color: black;
+    color: white;
+}
+
+/* End of left side conetent */
+
+.right-column {
+    display: flex;
+    width: 60%;
+    height: 90vh;
+    align-items: center;
+}
+
+
 .container-grid {
     justify-items: stretch;
     justify-content: stretch;
-    width: 320px;
-    height: 320px;
+    width: 80vh;
+    height: 70vh;
     background-color: white;
+    margin-left: 3vh;
 }
 
 .container-grid div {
     border: solid 1px black;
-
 }
 
-.rainbow-grid-color:disabled{
-    background-color: red;
-}
+
 
 
 

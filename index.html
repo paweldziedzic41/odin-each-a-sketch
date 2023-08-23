@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Etch a sketch</title>
 </head>
+
 <body>
-    <div class="parameters">
-        <input type="text" class="grid-color" value="red">
-        <button type="submit" class="rainbow-grid-color" >Change to rainbow</button>
-        <button type="submit" class="clear-grid">Clear grid</button>
-        <input type="range" class="grid-size" value="16" min="1" max="64">
+    <div class="header">
+        <h1>Etch-a-sketch</h1>
     </div>
-    <div class="container-grid">
+    <div class="game">
+        <div class="left-column">
+            <div class="container-parameters">
+                <input type = "color" class="custom-grid-color">
+                <button class="rainbow-grid-color"">Change to rainbow</button>
+                <button class="eraser">Eraser</button>
+                <button class="clear-grid">Clear grid</button>
+                <input type="range" class="grid-size" value="16" min="1" max="64">
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="container-grid"></div>
+        </div>
     </div>
-    <script src = "script.js"/>
+    <script src="script.js"/>
 </body>
+
 </html>
